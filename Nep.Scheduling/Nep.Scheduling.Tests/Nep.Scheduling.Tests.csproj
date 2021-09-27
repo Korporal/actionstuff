@@ -7,7 +7,7 @@
 
     <RootNamespace>Nep.Scheduling</RootNamespace>
 
-    <IsTestProject>true</IsTestProject>
+    <!--<IsTestProject>true</IsTestProject>-->
     
   </PropertyGroup>
 
