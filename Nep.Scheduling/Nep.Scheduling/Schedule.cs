@@ -14,6 +14,7 @@ namespace Nep.Scheduling
     /// because the API relies on on the interface being implemented.
     /// This is test text, just a small test.
     /// This is another change.
+    /// And another.
     /// </remarks>
     [DebuggerDisplay(@"{GetScheduleString()}")]
     public class Schedule
