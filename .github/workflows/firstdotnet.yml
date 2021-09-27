@@ -22,5 +22,5 @@ jobs:
     - name: Build
       run: dotnet build --no-restore Nep.Scheduling\\Nep.Scheduling
     - name: Test
-      #run: dotnet test --verbosity minimal Nep.Scheduling\\Nep.Scheduling.Tests\\Nep.Scheduling.Tests.csproj
-      run: dotnet test --no-build --verbosity minimal
+      run: dotnet test --verbosity minimal Nep.Scheduling\\Nep.Scheduling.Tests\\Nep.Scheduling.Tests.csproj
+      #run: dotnet test --no-build --verbosity minimal
