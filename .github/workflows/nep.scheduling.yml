@@ -4,11 +4,11 @@ on:
   push:
     branches: [ main ]
     paths: 
-      - '*.Nep.Scheduling.*'
+      - '**/Nep.Scheduling/**'
   pull_request:
     branches: [ main ]
     paths: 
-      - '*.Nep.Scheduling.*'
+      - '**/Nep.Scheduling/**'
 
 jobs:
   build:
