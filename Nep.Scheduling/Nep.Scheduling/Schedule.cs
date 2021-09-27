@@ -12,7 +12,7 @@ namespace Nep.Scheduling
     /// <remarks>
     /// The Schedule class encapsulates a set of schedulable items. This enables you to use any complex object you wish
     /// because the API relies on on the interface being implemented.
-    /// 
+    /// This is test text.
     /// </remarks>
     [DebuggerDisplay(@"{GetScheduleString()}")]
     public class Schedule
