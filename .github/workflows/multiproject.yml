@@ -48,7 +48,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run one "build"
         if: contains(steps.file_changes.outputs.files , '"Nep.Scheduling/')
-        run: echo Hello, one!
+        #run: echo Hello, one!
+        uses: Nep.Scheduling/builder
 
       - name: Run two "build"
         if: contains(steps.file_changes.outputs.files , '"two/')
