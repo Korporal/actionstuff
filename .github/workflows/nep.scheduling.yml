@@ -3,10 +3,10 @@ name: .Net.Scheduling
 on:
   push:
     branches: [ main ]
-    paths: [ Nep.Scheduling ]
+    paths: [ *Nep.Scheduling* ]
   pull_request:
     branches: [ main ]
-    paths: [ Nep.Scheduling ]
+    paths: [ *Nep.Scheduling* ]
 
 jobs:
   build:
