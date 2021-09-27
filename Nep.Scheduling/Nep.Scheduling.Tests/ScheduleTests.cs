@@ -170,7 +170,7 @@ namespace Nep.Scheduling
             var holiday2 = new Holiday(DT2021_FEB_20, DT2021_FEB_27, Exclusivity.FullyInclusive);
 
             Assert.IsTrue(schedule.IsAdjustedBy(holiday1, Adjustment.Apply, 7));
-            Assert.IsTrue(schedule.IsAdjustedBy(holiday2, Adjustment.Apply, 7));
+            Assert.IsFalse(schedule.IsAdjustedBy(holiday2, Adjustment.Apply, 7));
 
         }
     }
