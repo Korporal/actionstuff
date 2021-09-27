@@ -1,4 +1,4 @@
-name: .Net.Scheduling
+name: Build.Net.Scheduling
 
 on:
   push:
