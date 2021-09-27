@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nep.Scheduling</name>
+    </assembly>
+    <members>
+        <member name="T:Nep.Scheduling.Exclusivity">
+            <summary>
+            The different ways that the start and end date of a holiday can be counted.
+            </summary>
+        </member>
+        <member name="T:Nep.Scheduling.Holiday">
+            <summary>
+            Represents the concept of a holiday with various options.
+            </summary>
+        </member>
+        <member name="P:Nep.Scheduling.Holiday.StartDate">
+            <summary>
+            The first day of the holiday.
+            </summary>
+        </member>
+        <member name="P:Nep.Scheduling.Holiday.EndDate">
+            <summary>
+            The last day of the holiday.
+            </summary>
+        </member>
+        <member name="P:Nep.Scheduling.Holiday.Exclusivity">
+            <summary>
+            Reflects the different ways dates within a holiday are counted.
+            </summary>
+        </member>
+        <member name="M:Nep.Scheduling.Holiday.#ctor(System.DateTime,System.DateTime,Nep.Scheduling.Exclusivity)">
+            <summary>
+            Creates a Holiday using an explict start and end date and an exclusivity value.
+            </summary>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <param name="Exclusivity"></param>
+        </member>
+        <member name="P:Nep.Scheduling.Holiday.Duration">
+            <summary>
+            The number of days considered to be part of the holiday, influenced by the exclusivity.
+            </summary>
+        </member>
+        <member name="M:Nep.Scheduling.Holiday.FallsWithinHoliday(System.DateTime)">
+            <summary>
+            Indicates whether some date is or is not a holiday day, influenced by the exclusivity.
+            </summary>
+            <param name="Date"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nep.Scheduling.ISchedulable">
+            <summary>
+            Represents the interface an object must support if it is to schedulable.
+            </summary>
+        </member>
+        <member name="P:Nep.Scheduling.ISchedulable.At">
+            <summary>
+            The date used to schedule the object with respect to others.
+            </summary>
+        </member>
+        <member name="M:Nep.Scheduling.ISchedulable.Clone(System.DateTime)">
+            <summary>
+            Creates an exact copy of the original object but with the specifid datetime.
+            </summary>
+            <param name="DateTime">The datetime for scheduling purpose, exposed as 'At'</param>
+            <returns></returns>
+        </member>
+        <member name="T:Nep.Scheduling.Preservation">
+            <summary>
+            Represents the two distinct ways in which a holiday can be applied to a schedule
+            </summary>
+        </member>
+        <member name="F:Nep.Scheduling.Preservation.DatePreserving">
+            <summary>
+            Only adjust dates if any fall within the holiday interval.
+            </summary>
+        </member>
+        <member name="F:Nep.Scheduling.Preservation.TimePreserving">
+            <summary>
+            Always adjust all dates which fall on or after the start of the holiday.
+            </summary>
+        </member>
+        <member name="P:Nep.Scheduling.Schedule.Items">
+            <summary>
+            The collection of schedulable items ordered by ascending date.
+            </summary>
+        </member>
+        <member name="M:Nep.Scheduling.Schedule.#ctor(System.Boolean)">
+            <summary>
+            Creates a new empty instance of a Schedule
+            </summary>
+            <param name="IgnoreTime"></param>
+        </member>
+        <member name="M:Nep.Scheduling.Schedule.Add(Nep.Scheduling.ISchedulable)">
+            <summary>
+            Adds a schedulable item to the schedule, maintaining internal ordering of all items by date.
+            </summary>
+            <param name="Item"></param>
+        </member>
+        <member name="M:Nep.Scheduling.Schedule.AddRange(System.Collections.Generic.IEnumerable{Nep.Scheduling.ISchedulable})">
+            <summary>
+            Adds a sequence of schedulable item to the schedule, maintaining internal ordering of all items by date.
+            </summary>
+            <param name="Items"></param>
+        </member>
+        <member name="M:Nep.Scheduling.Schedule.ApplyHoliday(Nep.Scheduling.Holiday,System.Int32,Nep.Scheduling.Preservation)">
+            <summary>
+            Creates a new schedule in which all schedulable items that are imapcted by a holiday are given new dates.
+            </summary>
+            <param name="Holiday">A holiday</param>
+            <param name="RoundBy">Makes the holiday's effective duration a multiple of this value.</param>
+            <param name="Preservation">The type of changes to make the schedule.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nep.Scheduling.Schedule.RetractHoliday(Nep.Scheduling.Holiday,System.Int32,Nep.Scheduling.Preservation)">
+            <summary>
+            Creates a new schedule in which any scheduled items impacted by the holiday are given their original dates.
+            </summary>
+            <param name="Holiday">A holiday</param>
+            <param name="RoundBy">Makes the holiday's effective duration a multiple of this value.</param>
+            <param name="Preservation">The type of changes to make the schedule.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nep.Scheduling.Schedule.GetScheduleString">
+            <summary>
+            Returns a string representation of all of the dates of the items in the schedule.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

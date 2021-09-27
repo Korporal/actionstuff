@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HolidayAPI</name>
+    </assembly>
+    <members>
+        <member name="T:HolidayAPI.Exclusivity">
+            <summary>
+            The different ways that the start and end date of a holiday can be counted.
+            </summary>
+        </member>
+        <member name="T:HolidayAPI.Holiday">
+            <summary>
+            Represents the concept of a holiday with various options.
+            </summary>
+        </member>
+        <member name="P:HolidayAPI.Holiday.StartDate">
+            <summary>
+            The first day of the holiday.
+            </summary>
+        </member>
+        <member name="P:HolidayAPI.Holiday.EndDate">
+            <summary>
+            The last day of the holiday.
+            </summary>
+        </member>
+        <member name="P:HolidayAPI.Holiday.Exclusivity">
+            <summary>
+            Reflects the different ways dates within a holiday are counted.
+            </summary>
+        </member>
+        <member name="M:HolidayAPI.Holiday.#ctor(System.DateTime,System.DateTime,HolidayAPI.Exclusivity)">
+            <summary>
+            Creates a Holiday using an explict start and end date and an exclusivity value.
+            </summary>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <param name="Exclusivity"></param>
+        </member>
+        <member name="P:HolidayAPI.Holiday.Duration">
+            <summary>
+            The number of days considered to be part of the holiday, influenced by the exclusivity.
+            </summary>
+        </member>
+        <member name="M:HolidayAPI.Holiday.FallsWithinHoliday(System.DateTime)">
+            <summary>
+            Indicates whether some date is or is not a holiday day, influenced by the exclusivity.
+            </summary>
+            <param name="Date"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HolidayAPI.Preservation">
+            <summary>
+            Represents the two distinct ways in which a holiday can be applied to a schedule
+            </summary>
+        </member>
+        <member name="F:HolidayAPI.Preservation.DatePreserving">
+            <summary>
+            Only adjust dates if any fall within the holiday interval.
+            </summary>
+        </member>
+        <member name="F:HolidayAPI.Preservation.TimePreserving">
+            <summary>
+            Always adjust all dates which fall on or after the start of the holiday.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Nep.Scheduling</PackageId>
+    <Authors>Hugh Gleaves</Authors>
+    <Company>National Education Partners</Company>
+    <Product>Library offering scheduling and holiday calculation services</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Provides classes that aid in representing schedules of dates, including operations upon them like applying a holiday in various ways.</Description>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <!-- SEE: https://stackoverflow.com/a/69055897 -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+</Project>

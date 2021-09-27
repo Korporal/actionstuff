@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nep.Scheduling.Tests\Nep.Scheduling.Tests.csproj" />
+    <ProjectReference Include="..\Nep.Scheduling\Nep.Scheduling.csproj" />
+  </ItemGroup>
+
+
+</Project>
