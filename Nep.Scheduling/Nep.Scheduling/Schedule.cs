@@ -18,6 +18,7 @@ namespace Nep.Scheduling
     /// Even more.
     /// Here's more
     /// Yawwwwwwn
+    /// Wow
     /// </remarks>
     [DebuggerDisplay(@"{GetScheduleString()}")]
     public class Schedule
