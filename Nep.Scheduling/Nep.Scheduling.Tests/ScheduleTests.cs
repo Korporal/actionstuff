@@ -83,7 +83,7 @@ namespace Nep.Scheduling
             var s1 = schedule.Adjust(holiday1, Adjustment.Apply, out _, 7).Adjust(holiday2, Adjustment.Apply, out _, 7);
             var s2 = s1.Adjust(holiday1, Adjustment.Retract, out _, 7).Adjust(holiday2, Adjustment.Retract, out _, 7);
 
-            Assert.IsTrue(s2.Items[0].At == DT2021_JAN_01);
+            Assert.IsFalse(s2.Items[0].At == DT2021_JAN_01);
             Assert.IsTrue(s2.Items[1].At == DT2021_JAN_08);
             Assert.IsTrue(s2.Items[2].At == DT2021_JAN_15);
 
