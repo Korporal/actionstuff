@@ -5,15 +5,24 @@ name: Build.Net.Scheduling
 
 defaults:
   run:
+    ############################################################
+    # Set the root folder path where the solution is situated
+    ############################################################
     working-directory: Nep.Scheduling
 
 on:
   push:
     branches: [ main ]
+    ####################################################################################
+    # Trigger the push action if any file in the commit refers to the specified folder.
+    ####################################################################################
     paths: 
       - '**/Nep.Scheduling/**'
   pull_request:
     branches: [ main ]
+    ####################################################################################
+    # Trigger the pull action if any file in the commit refers to the specified folder.
+    ####################################################################################
     paths: 
       - '**/Nep.Scheduling/**'
 
@@ -24,14 +33,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
+    - name: Setup .NET runtime emvironment
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
+    - name: Restore packages and other dependencies
       run: dotnet restore Nep.Scheduling/Nep.Scheduling.csproj
-    - name: Build
+    - name: Build the project
       run: dotnet build --no-restore Nep.Scheduling
-    - name: Test
+    - name: Build and run the unit tests
       run: dotnet test --verbosity minimal Nep.Scheduling.Tests/Nep.Scheduling.Tests.csproj
-      #run: dotnet test --no-build --verbosity minimal
