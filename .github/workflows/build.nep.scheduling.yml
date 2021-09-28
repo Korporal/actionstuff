@@ -1,5 +1,9 @@
 name: Build.Net.Scheduling
 
+defaults:
+  run:
+    working-directory: Nep.Scheduling
+
 on:
   push:
     branches: [ main ]
@@ -22,9 +26,9 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore Nep.Scheduling\\Nep.Scheduling\\Nep.Scheduling.csproj
+      run: dotnet restore \\Nep.Scheduling\\Nep.Scheduling.csproj
     - name: Build
-      run: dotnet build --no-restore Nep.Scheduling\\Nep.Scheduling
+      run: dotnet build --no-restore \\Nep.Scheduling
     - name: Test
-      run: dotnet test --verbosity minimal Nep.Scheduling\\Nep.Scheduling.Tests\\Nep.Scheduling.Tests.csproj
+      run: dotnet test --verbosity minimal \\Nep.Scheduling.Tests\\Nep.Scheduling.Tests.csproj
       #run: dotnet test --no-build --verbosity minimal
