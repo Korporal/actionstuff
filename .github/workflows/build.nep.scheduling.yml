@@ -8,7 +8,7 @@ defaults:
     ############################################################
     # Set the root folder path where the solution is situated
     ############################################################
-    working-directory: Nep.Scheduling
+    working-directory: libraries/Nep.Scheduling
 
 on:
   push:
