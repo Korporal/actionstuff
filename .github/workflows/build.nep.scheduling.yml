@@ -1,8 +1,14 @@
+###############################################################################
+# This action will build the specified project and then run all unit tests.
+###############################################################################
 name: Build.Net.Scheduling
+
+env:
+    solution-folder: Nep.Scheduling
 
 defaults:
   run:
-    working-directory: Nep.Scheduling
+    working-directory: ${{ solution-folder }}
 
 on:
   push:
