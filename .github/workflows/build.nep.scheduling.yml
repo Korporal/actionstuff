@@ -8,7 +8,7 @@ env:
 
 defaults:
   run:
-    working-directory: ${{ solution-folder }}
+    working-directory: $solution-folder
 
 on:
   push:
